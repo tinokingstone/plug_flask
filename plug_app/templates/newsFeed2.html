@@ -1,0 +1,68 @@
+
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='postCont.css') }}">
+
+			<div id="nfCont">
+
+
+		 			{% for i in result %}
+
+		 	<div class="photoPostCont">
+
+				<div id="pstInfoTop">
+					<div class="userPhoto">
+						<div >
+							<img class="post_img"  src="https://source.unsplash.com/random">
+					</div>
+						</div>
+
+
+					<div class="userName">
+						{% for i in post_user %}
+							<div>{{ i.Firstname +" "+ i.Secondname  }}</div>
+
+						
+
+
+						 <div class="UsrPstMeta">@{{ i.username }}</div> 
+
+						<div class="skilltagcont">
+							<div class="skilltag">Music Producer</div>
+							<div class="skilltag">3d Artist</div>
+						</div>
+
+
+						<div class="timePostes">. 12hr</div>
+					</div>
+
+						{% endfor %}
+				</div>
+
+
+							<div class="contMargin">
+
+
+
+								<div class="post">
+
+						<div id="pstcontent">
+							<div id="profile_pic">
+								<img class="post_img" src="{{ image_file+i.Img_id   }}.jpg" alt=""  class="signup_form_prof_pic" />
+							</div>
+						</div>
+
+
+						<div>{{ i.Title  }}</div>
+						<div>{{ i.TxtContent   }}</div>
+						<div>{{ i.Img_id   }}</div>
+						<div>{{ i.user_id   }}</div>
+
+	
+								</div>
+							</div>
+						</div>
+  
+					{% endfor %}						
+				 							
+					
+			</div>
+

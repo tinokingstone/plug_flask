@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='skilltags.css') }}">
+
+    <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+
+	<div class="SKILLTAG_FORM">
+						<div id="sign_up_form_header">
+							<div id="signup_header_txt"></div>
+							<div id="signup_p_icon"></div>
+						</div>	
+				
+						<div class="">
+							<div class="header_txt">
+								{{ form.Skilltag.label(class="") }}
+							</div>
+
+							<div class="signup_form_txt_field_cont">
+								{{ form.Skilltag(class="") }}
+							</div>
+				                {% if form.Skilltag.errors %}
+				                    <div class='error'>
+				                        {% for error in form.Skilltag.errors %}
+				                            <span>{{ error }}</span>
+				                        {% endfor %}
+				                    </div>
+				                {% endif %}						
+						</div>
+		</div>
+
+
+
+
+					<div class="submit">
+							{{ form.submit }}
+					</div>
+        </form>
+{% endblock content %}
